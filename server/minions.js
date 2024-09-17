@@ -41,5 +41,10 @@ minionsRouter.put('/:id', (req, res, next) => {
 
 minionsRouter.delete('/:id', (req, res, next) => {
     const deletedMinion = deleteFromDatabasebyId('minions', req.params.id);
-    res.status(204).send(deletedMinion)
+    if(deletedMinion) {
+        res.status(204);
+    } else {
+        res.status(404);
+    }
+    res.send()
 })
