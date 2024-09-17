@@ -2,9 +2,9 @@ const express = require('express');
 const apiRouter = express.Router();
 
 
-const minionRouter = require('./minion');
+const minionsRouter = require('./minion');
 
-apiRouter.use('/minion', minionRouter);
+apiRouter.use('/minion', minionsRouter);
 
 
 
