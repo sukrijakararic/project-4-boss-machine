@@ -11,16 +11,6 @@ const {
     deleteAllFromDatabase,
 } = require('./db');
 
-meetingsRouter.param('id', (req, res, next, id) => {
-    const meeting = getFromDatabaseById('meetings', id)
-    if (meeting) {
-        req.meeting = meeting
-        next() }
-    else {
-        res.status(404).send()
-    }
-})
-
 meetingsRouter.get('/', (req, res, next) => {
     res.send(getAllFromDatabase('meetings'))
 });
