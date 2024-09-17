@@ -43,7 +43,7 @@ ideasRouter.put('/:ideaId', checkMillionDollarIdea, (req, res, next) => {
 });
 
 ideasRouter.delete('/:ideaId', (req, res, next) => {
-    const deletedIdea = deleteFromDatabasebyId('ideas', req.params.id);
+    const deletedIdea = deleteFromDatabasebyId('ideas', req.params.ideaId);
     if (deletedIdea) {
         res.status(204);
     } else {
